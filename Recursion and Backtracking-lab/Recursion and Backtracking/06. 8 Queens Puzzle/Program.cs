@@ -14,17 +14,15 @@ namespace _06._8_Queens_Puzzle
         static void Main(string[] args)
         {
             bool[,] bord = new bool[8, 8];
-            int count = 0;
-            GenerateSolutions(bord,0,ref count);
-            Console.WriteLine($"Number of solutions {count}");
+            GenerateSolutions(bord,0);
         }
 
-        private static void GenerateSolutions(bool[,] bord,int row,ref int count)
+        private static void GenerateSolutions(bool[,] bord,int row)
         {
             if (row >= bord.GetLength(0))
             {
                 PrintBord(bord);
-                count++;
+              
                 return;
             }
             for (int col = 0; col < bord.GetLength(1); col++)
@@ -36,7 +34,7 @@ namespace _06._8_Queens_Puzzle
                     leftDiagonale.Add(row - col);
                     rightDiagonal.Add(row + col);
                     bord[row,col] = true;
-                    GenerateSolutions(bord, row + 1,ref count);
+                    GenerateSolutions(bord, row + 1);
                     left.Remove(row);
                     right.Remove(col);
                     leftDiagonale.Remove(row - col);
