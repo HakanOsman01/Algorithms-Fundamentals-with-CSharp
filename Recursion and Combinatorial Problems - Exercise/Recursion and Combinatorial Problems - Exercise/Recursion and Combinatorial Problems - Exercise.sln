@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Reverse Array", "01. Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Nested Loops", "..\02. Nested Loops\02. Nested Loops.csproj", "{B2DBE96B-077D-4B9E-ACAC-4AD827A3C1B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Connected Areas in Matrix", "..\Recursi\03. Connected Areas in Matrix\03. Connected Areas in Matrix.csproj", "{321395A5-0A08-420E-863D-7719DFE822A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Cinema", "..\..\RecursionExercise\Recursion and Combinatorial Problems - Exercise\04. Cinema\04. Cinema.csproj", "{7CCC0EE2-09F7-47E9-8F91-6DA39D994689}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{B2DBE96B-077D-4B9E-ACAC-4AD827A3C1B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2DBE96B-077D-4B9E-ACAC-4AD827A3C1B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2DBE96B-077D-4B9E-ACAC-4AD827A3C1B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{321395A5-0A08-420E-863D-7719DFE822A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{321395A5-0A08-420E-863D-7719DFE822A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{321395A5-0A08-420E-863D-7719DFE822A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{321395A5-0A08-420E-863D-7719DFE822A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CCC0EE2-09F7-47E9-8F91-6DA39D994689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CCC0EE2-09F7-47E9-8F91-6DA39D994689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CCC0EE2-09F7-47E9-8F91-6DA39D994689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CCC0EE2-09F7-47E9-8F91-6DA39D994689}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
