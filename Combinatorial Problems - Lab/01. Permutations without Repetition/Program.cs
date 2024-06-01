@@ -1,4 +1,7 @@
-﻿namespace _01._Permutations_without_Repetition
+﻿using System;
+using System.Linq;
+
+namespace _01._Permutations_without_Repetition
 {
     internal class Program
     {
