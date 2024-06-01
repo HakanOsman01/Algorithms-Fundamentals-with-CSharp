@@ -1,4 +1,6 @@
-﻿namespace _06._Combinations_with_Repetition
+﻿using System;
+using System.Linq;
+namespace _06._Combinations_with_Repetition
 {
     
     internal class Program
