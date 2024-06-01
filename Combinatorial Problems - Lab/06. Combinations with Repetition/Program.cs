@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-namespace _05._Combinations_without_Repetition
+﻿namespace _06._Combinations_with_Repetition
 {
     
     internal class Program
@@ -13,11 +10,10 @@ namespace _05._Combinations_without_Repetition
             elements = Console.ReadLine().Split()
              .ToArray();
             int k = int.Parse(Console.ReadLine());
-           combinations = new string[k];
-            GenCombinations(0,0);
-
+            combinations = new string[k];
+            GenCombinations(0, 0);
         }
-        private static void GenCombinations(int idx,int elementStartIdx)
+        private static void GenCombinations(int idx, int elementStartIdx)
         {
             if (idx >= combinations.Length)
             {
@@ -28,7 +24,7 @@ namespace _05._Combinations_without_Repetition
             {
 
                 combinations[idx] = elements[i];
-                GenCombinations(idx + 1,i+1);
+                GenCombinations(idx + 1, i);
             }
         }
     }
