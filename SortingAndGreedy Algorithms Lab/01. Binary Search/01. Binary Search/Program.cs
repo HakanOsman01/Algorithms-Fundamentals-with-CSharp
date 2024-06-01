@@ -13,32 +13,28 @@ namespace _01._Binary_Search
                 .ToArray();
             int number = int.Parse(Console.ReadLine());
             int index=BinarySearch(elements, number);
-
-            Console.WriteLine($"Index of {number} is {index}");
-
-
-
+            Console.WriteLine(index);
 
         }
 
         private static int BinarySearch(int[] elements, int number)
         {
-            int start = 0;
-            int end = elements.Length - 1;
-            while(start<=end)
+            int left = 0;
+            int right = elements.Length - 1;
+            while(left<=right)
             {
-                int mid=(start+end)/2;
+                int mid=(left +right) / 2;
                 if (elements[mid] == number)
                 {
                     return mid;
                 }
                 if (elements[mid] < number)
                 {
-                    start = mid + 1;
+                    left = mid + 1;
                 }
                 else
                 {
-                    end=mid - 1;
+                    right =mid - 1;
                 }
             }
             return -1;
