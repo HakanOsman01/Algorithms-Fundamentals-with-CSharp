@@ -41,8 +41,19 @@ namespace _05._Quicksort
 
             }
             Swap(right,pivot, elements);
-            Quicksort(elements, start, right - 1);
-            Quicksort(elements, right + 1, end);
+            var isLeftSubArraySmaller = right - 1 - start < right + 1 - end;
+            if (isLeftSubArraySmaller)
+            {
+                Quicksort(elements, start, right - 1);
+                Quicksort(elements, right + 1, end);
+            }
+            else
+            {
+                Quicksort(elements, right + 1, end);
+                Quicksort(elements, start, right - 1);
+               
+            }
+          
         }
 
         private static void Swap(int first, int second, int[] elements)
