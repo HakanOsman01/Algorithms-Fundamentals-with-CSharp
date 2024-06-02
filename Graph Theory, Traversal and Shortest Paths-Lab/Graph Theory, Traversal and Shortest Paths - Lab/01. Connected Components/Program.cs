@@ -16,7 +16,7 @@ namespace _01._Connected_Components
             int n = int.Parse(Console.ReadLine());
             graph = new List<int>[n];
             visited = new bool[n];
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++) 
             {
                 string currentNode=Console.ReadLine();
                 if (string.IsNullOrEmpty(currentNode))
