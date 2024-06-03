@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Connected Components", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Topological Sorting", "..\Graph Theory- Lab\02. Topological Sorting\02. Topological Sorting.csproj", "{17248ACD-8027-4D2F-A6C1-9BD8066194A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Shortest Path", "..\03. Shortest Path\03. Shortest Path.csproj", "{D5FD1DBE-FB6B-4269-9C55-EA53B7A1B384}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{17248ACD-8027-4D2F-A6C1-9BD8066194A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17248ACD-8027-4D2F-A6C1-9BD8066194A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17248ACD-8027-4D2F-A6C1-9BD8066194A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5FD1DBE-FB6B-4269-9C55-EA53B7A1B384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5FD1DBE-FB6B-4269-9C55-EA53B7A1B384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5FD1DBE-FB6B-4269-9C55-EA53B7A1B384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5FD1DBE-FB6B-4269-9C55-EA53B7A1B384}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
