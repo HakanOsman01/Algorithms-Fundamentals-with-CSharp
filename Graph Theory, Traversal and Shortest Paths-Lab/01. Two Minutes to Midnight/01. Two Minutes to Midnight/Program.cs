@@ -1,63 +1,94 @@
-﻿using System.ComponentModel.Design;
+﻿using System;
+using System.Linq;
 
-namespace _01._Two_Minutes_to_Midnight
+namespace _06._Merge_Sort
 {
     internal class Program
     {
-        private static List<int>[] graph;
-        private static bool[] visited;
         static void Main(string[] args)
         {
-           int n=int.Parse(Console.ReadLine());
-           graph=new List<int>[n];
-           visited=new bool[n];
-           ReadGraph(n);
-            
-            for (int i = 0; i < graph.Length; i++)
-            {
-                List<int> components = new List<int>();
-                DFS(i, components);
-                if(components.Count != 0)
-                {
-                    Console.WriteLine($"Connected component: {string.Join(' ',components)}");
-                }
-            }
-
+            int[] elements = Console.ReadLine().Split(' ')
+               .Select(num => int.Parse(num))
+               .ToArray();
+            //var sorted = MergeSort(elements);
+            QuickSort(elements, 0, elements.Length - 1);
+            Console.WriteLine(string.Join(' ', elements));
         }
-        private static void ReadGraph(int n)
+
+        private static int[] MergeSort(int[] elements)
         {
-            for (int i = 0; i < n; i++)
+            if (elements.Length <= 1)
             {
-                var childs = Console.ReadLine();
-                if (string.IsNullOrEmpty(childs))
+                return elements;
+            }
+            var left = elements.Take(elements.Length / 2).ToArray();
+            var right = elements.Skip(elements.Length / 2).ToArray();
+            return Merge(MergeSort(left), MergeSort(right));
+        }
+
+        private static int[] Merge(int[] left, int[] right)
+        {
+            var merge = new int[left.Length + right.Length];
+            var mergeIdx = 0;
+            var leftIdx = 0;
+            var rightIdx = 0;
+            while (leftIdx < left.Length && rightIdx < right.Length)
+            {
+                if (left[leftIdx] > right[rightIdx])
                 {
-                    graph[i] = new List<int>();
+                    merge[mergeIdx++] = left[leftIdx++];
                 }
                 else
                 {
-                    graph[i] = childs.Split(' ')
-                        .Select(int.Parse)
-                        .ToList();
+                    merge[mergeIdx++] = right[rightIdx++];
                 }
-
-
             }
+            for (int i = leftIdx; i < left.Length; i++)
+            {
+                merge[mergeIdx++] = left[i];
+            }
+            for (int i = rightIdx; i < right.Length; i++)
+            {
+                merge[mergeIdx++] = right[i];
+            }
+            return merge;
         }
-        private static void DFS (int node, List<int> components)
+        private static void QuickSort(int[] elements,int start,int end)
         {
-            if (visited[node])
+            if (start <= end)
             {
                 return;
             }
-            visited[node]=true;
-            foreach (var child in graph[node])
+            var pivot = start;
+            var left = start+1;
+            var right = end;
+            while (left <= right)
             {
-                DFS(child, components);
+                if (elements[left] > elements[pivot] 
+                    && elements[right] < elements[pivot])
+                {
+                    Swap(left, right, elements);
+                }
+                if (elements[left] < elements[pivot])
+                {
+                    left++;
+                }
+                if (elements[right] > elements[pivot])
+                {
+                    right--;
+                }
+
             }
-            components.Add(node);
-            
+            Swap(start, right, elements);
+            QuickSort(elements, right+1, end);
+
+        }
+        private static void Swap(int first, int second, int[] elements)
+        {
+            var temp = elements[first];
+            elements[first] = elements[second];
+            elements[second] = temp;
         }
 
-    
     }
 }
