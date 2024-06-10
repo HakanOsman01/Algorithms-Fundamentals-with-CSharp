@@ -1,4 +1,6 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace _01._Distance_Between_Vertices
 {
@@ -17,7 +19,7 @@ namespace _01._Distance_Between_Vertices
                 int startNode = distance.Item1;
                 int endNode = distance.Item2;
                 int steps = BFS(startNode, endNode);
-                Console.WriteLine($"{{{startNode}}},{{{endNode}}} -> {steps}");
+                Console.WriteLine($"{{{startNode}, {endNode}}} -> {steps}");
              
                
 
