@@ -1,4 +1,8 @@
-﻿namespace _03.Cycles_in_a_Graph
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace _03.Cycles_in_a_Graph
 {
     internal class Program
     {
@@ -58,9 +62,6 @@
             }
             cycles.Remove(node);
         }
-
-       
-
         private static void ReadGraph()
         {
            string info=Console.ReadLine();
