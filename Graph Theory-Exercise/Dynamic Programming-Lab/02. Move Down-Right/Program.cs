@@ -12,7 +12,44 @@ namespace _02._Move_Down_Right
             int cols = int.Parse(Console.ReadLine());
             int[,]matrix=ReadMatrix(rows, cols);
             int[,]fullMatrix=FullMatrix(matrix);
-            ;
+            Stack<string> path = GetPath(fullMatrix);
+            Console.WriteLine(string.Join(' ',path));
+        }
+
+        private static Stack<string> GetPath(int[,] fullMatrix)
+        {
+            Stack<string> path = new Stack<string>();
+            int rows=fullMatrix.GetLength(0)-1;
+            int cols=fullMatrix.GetLength(1)-1;
+            path.Push($"[{rows}, {cols}]");
+            while (rows>0 && cols > 0)
+            {
+               
+                int top = rows - 1;
+                int right = cols - 1;
+                if (top > right)
+                {
+                    cols--;
+                }
+                else
+                {
+                    rows--;
+                }
+                path.Push($"[{rows}, {cols}]");
+
+            }
+            while (rows > 0)
+            {
+                rows--;
+                path.Push($"[{rows}, {cols}]");
+            }
+            while(cols > 0)
+            {
+                cols--;
+                path.Push($"[{rows}, {cols}]");
+            }
+            //path.Push($"[{rows}, {cols}]");
+            return path;
         }
 
         private static int[,] ReadMatrix(int rows, int cols)
