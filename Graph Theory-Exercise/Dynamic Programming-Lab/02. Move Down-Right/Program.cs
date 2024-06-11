@@ -48,7 +48,6 @@ namespace _02._Move_Down_Right
                 cols--;
                 path.Push($"[{rows}, {cols}]");
             }
-            //path.Push($"[{rows}, {cols}]");
             return path;
         }
 
@@ -92,11 +91,9 @@ namespace _02._Move_Down_Right
 
                     int left = fullMatrix[row-1, col];
                     int down = fullMatrix[row, col-1];
-                    if (down >= left)
-                    {
-                        fullMatrix[row, col] = Math.Max(left, down) + matrix[row, col];
+                    fullMatrix[row, col] = Math.Max(left, down) + matrix[row, col];
 
-                    }
+                   
                 }
             }
             return fullMatrix;
