@@ -24,16 +24,16 @@ namespace _02._Move_Down_Right
             path.Push($"[{rows}, {cols}]");
             while (rows>0 && cols > 0)
             {
-               
-                int top = rows - 1;
-                int right = cols - 1;
+              
+                int top = fullMatrix[rows-1,cols];
+                int right = fullMatrix[rows,cols-1];
                 if (top > right)
                 {
-                    cols--;
+                    rows--;
                 }
                 else
                 {
-                    rows--;
+                    cols--;
                 }
                 path.Push($"[{rows}, {cols}]");
 
